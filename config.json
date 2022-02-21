@@ -1,0 +1,12 @@
+{
+  "cluster-1": {
+    "name": "Desired_name",
+    "address": "K8s_API",
+    "env": "dev"
+  }, 
+  "cluster-2": {
+    "name": "Desired_name",
+    "address": "K8s_API",
+    "env": "prod"
+  }
+}
