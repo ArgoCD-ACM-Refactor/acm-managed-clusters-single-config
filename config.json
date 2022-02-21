@@ -1,12 +1,14 @@
 {
-  "cluster-1": {
-    "name": "Desired_name",
-    "address": "K8s_API",
-    "env": "dev"
-  }, 
-  "cluster-2": {
-    "name": "Desired_name",
-    "address": "K8s_API",
-    "env": "prod"
-  }
+  "cluster": [
+   {
+      "name": "local-cluster",
+      "address": "https://api.cluster-3610.sandbox239.opentlc.com:6443",
+      "env": "dev"
+    }, 
+    {
+      "name": "mycluster",
+      "address": "K8s_API",
+      "env": "prod"
+    }
+ ]
 }

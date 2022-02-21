@@ -1,0 +1,30 @@
+cat <<EOF | oc apply -f -
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-prueba
+  namespace: openshift-gitops
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-managed-clusters-single-config.git
+      revision: main
+      files:
+      - path: "config.json"
+  template:
+    metadata:
+      name: '{{cluster[0].name}}-{{cluster[0].env}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/redhat-developer-demos/openshift-gitops-examples.git
+        targetRevision: main
+        path: "apps/bgd/overlays/bgdk"
+      destination:
+        server: '{{cluster[0].address}}'     
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: false        
+EOF
