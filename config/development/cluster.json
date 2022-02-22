@@ -1,0 +1,9 @@
+{
+  "environment": "development",
+  "cloud": "aws",
+  "region": "eu-central-1",
+  "cluster": {
+    "name": "local-cluster",
+    "address": "https://api.cluster-3610.sandbox239.opentlc.com:6443"
+  }
+}

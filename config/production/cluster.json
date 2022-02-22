@@ -1,0 +1,9 @@
+{
+  "environment": "production",
+  "cloud": "aws",
+  "region": "eu-west-3",
+  "cluster": {
+    "name": "managed-cluster",
+    "address": "https://api.cluster-4d0c.4d0c.sandbox902.opentlc.com:6443"
+  }
+}
